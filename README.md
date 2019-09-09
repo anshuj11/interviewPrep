@@ -25,6 +25,7 @@ Bob   |10|
  * How are indices implemented
  * what are the advantages/disadvantages of having indices
  * What are composed indices
+ * How do you measure performance of a query ( what tools would you use, what output does it provide that is relevant to you)
 ## System Level
 * What is a mutex
 * What is deadlock
