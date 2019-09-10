@@ -40,6 +40,8 @@ Data structures
 * What is hashing and salting
 * Where is salt value stored
 https://brilliant.org/wiki/bloom-filter/
+* How does malloc function works in C ( what parameters you pass to it and what is the output)
+* How does free function work
 * Binary Search Trees
 * Search time Big O, Worst case search time
 * How to you find kth smallest element ( preorder traversal?)
