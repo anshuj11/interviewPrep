@@ -52,7 +52,7 @@ Make sure to run passing specs after each fix, it's possible to fail passing spe
 # System Architecture :VERBAL
 HTTP
 Difference between GET and POST requests
-
+How does caching work, what is load balancing?
 
 
  Q. A colleague has given you data scraped from Craigslist on used cars.
