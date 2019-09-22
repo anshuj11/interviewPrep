@@ -1,0 +1,29 @@
+Call with CEO
+Online Assessment
+
+React ---
+A lot of questions about hooks ( which I didn't understand at all)
+  -using camelcase? 
+  
+  
+  Coding assessment:
+  
+  Bank stores numbers in the following format 
+  
+  Given = 111
+  Bank format = 1*100+1*10 + 1
+  
+  count the number of zeros that the bank record will have for a given number 
+  Ans: 3
+  
+  
+  
+ Q.  2.
+ 
+ Number of machined : N
+Max frq : X
+Each machine has to be atleast 2 integers apart from other machines to avoid resonance.
+How many ways can a machine's frequency be picked.
+
+
+q. Given a matrix of 1 s and 0s. find the areas with maximum adjacent 1s and and min adjacent 1s and return the difference.
