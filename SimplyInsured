@@ -1,0 +1,44 @@
+9/23 - 10 AM, Monday
+Shirin Salehi - https://www.linkedin.com/in/shirin-salehi-012aa676/
+She introduced herself and asked if I had any questions - I said no reflexively, then corrected myself and said 
+I do have questions but I will wait for her to finish interviewing me to ask them?
+She said, she will allow me some time for questions later on:
+
+Q. What am I looking for in terms of role?
+A. Front end : Javascript, React and Redux.
+Q. I working on frontend paramount for me or if I was open to work on backend as well if needed?
+A. To be a good front-end engineer, its imperative that I have a keen understanding of how the back-end works. I would be 
+happy to work on back-end as needed.
+Q. Have I worked with a company in healthcare space, what made me consider them?
+A. Health Insurance is a challenging problem of our times and everyone from Presidential candidates to common people like 
+you and me are trying to wrap our head around how to solve it. No one has the perfect solution yet but everyone agrees that the
+way it is right now is broken. A developed country like US shouldn't have a healthcare system that is unaffordable for so many 
+people. So I am interested in being a part of team which is trying to find a part of solution. 
+When we ran our company, we tried to figure out a way to provide insurance to our employees but we couldn't do it at the time, 
+so  when I read your mission statement, it made me look.
+Q. What is a challenging problem that I solved during my past work? How did I do it?
+A. I bungled this question a little - need to prepare a better answer.
+
+I was trying to use AWS-S3 to develop our website for our e-commerce business, it was working fine locally, bu
+t everything broke as soon as I pushed it into production. I had to rollback about 30% of our code.
+To solve this, I had to do it piece by piece where images were added at the very end. Doing this I realized that if a table has
+images, every record need s to have an attached image for it to work properly.
+I also needed to finish it by Septemeber because Halloween was our sales season.
+
+She commented that I completed a difficult task with a tight deadline, is that what I was trying to convey? I said yes.
+
+
+
+Questions I asked ---
+regarding company ->
+How do you acquire customers? A. via facebook advertising and Intuit/ One other company - also funnel their customers to 
+simply insured
+What are your conversion numbers ( if you wouldn't mind sharing)? A. 5-7% . I commented that its great for online funnels. She r
+responded that they are trying to bring it up to 10%.
+What is the company vision for next 5 years?
+A I should ask this to more senior members of team as they have 100 days planning sessions and she doesn't have visibility
+into long term plans being that she is only 1 year old on the team.
+Q. What is the perf review process?
+A. Twice a year with CEO. Weekly 1:1 with manager.
+   They also pride themselves on being completely transparent in terms of salary, money in bank etc.
+   
