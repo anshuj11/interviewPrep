@@ -1,0 +1,51 @@
+Gives estimates for houses by taking their measurements using phones. 
+Used by Insurance and home loan companies to figure out estimates of housing.
+Also stitch together multiple pics to give a seamless 360 degree view of a house. 
+
+Emploees - Jay Ithiel - aA alumni
+           Atulya Shreeram Shree - IITK alumni
+           
+       
+           Matt Ash - https://www.linkedin.com/in/mattesch/  - Former Oracle employee
+           
+           
+           Tell me about yourself -
+           I stuck to personal pitch for para 1 and 2 but rambled on a little and lost my steam by the time I reached para 3.
+           I could convey my business experience in positive light.
+           
+           Q. Why did you choose RoR for backend?
+           A.Ruby is very easy to learn and deliver code in also Ruby on Rails was industry standard at the time so I chose it 
+           knowing that I wasn't sacrificing scalability and performance for ease of use.
+           
+           Should have said - Rapid prototyping
+           
+           Q. What development model did you use ? I imagine you used Waterfall at Sun ( I said unfortunately we used waterfall 
+           model at both Sun and Oracle).
+           A. We used daily stand-up meetings to keep track of how everyone was doing. Two weeks goals to add features. A longer 
+           meeting in the beginning to overhaul the whole site.
+           Should have said - Relaxed version of Agile. Tried to keep it formal but didn't let bureaucracy in the way of fast 
+           delivery.
+           
+           How did you do quality control at Blooms And Bugs?
+           A. Struggled with it because we were a small team of 3 people.
+           Should have said - We did Test Driven dEvelopment. Wrote RSpec tests before we wrote any code to make sure we are not 
+           breaking existing features while building new ones.
+           Feature Testing
+           Unit Testing
+           End to End Testing
+           
+           Q. Tell me about a challenging time for your team during your work-experience at Blooms And Bugs or Oracle.
+           Explained about how everything broke while using AWS S3 and I had to roll-back and re-do code piecemeal.
+            -Could have made the story tighter, more technical and interesting
+            -Could have mentioned some takeaways from the story.
+           
+           Asked me if I had downloaded their App ( I didn't)
+           Also didn't remember a lot of what they do, although I did read about them and inject my thoughts later on during
+           the conversation.
+           He said he didn't know about App Academy. I didn't mention that one of their Engineers was an app Academy alumni, nor 
+           did I mention the engineer from IIT Kanpur. 
+           
+       
+           
+           
+           
