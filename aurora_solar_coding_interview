@@ -1,0 +1,89 @@
+import './styles.css';
+
+const states = [
+  'Alabama',
+  'Alaska',
+  'American Samoa',
+  'Arizona',
+  'Arkansas',
+  'California',
+  'Colorado',
+  'Connecticut',
+  'Delaware',
+  'District of Columbia',
+  'Federated States of Micronesia',
+  'Florida',
+  'Georgia',
+  'Guam',
+  'Hawaii',
+  'Idaho',
+  'Illinois',
+  'Indiana',
+  'Iowa',
+  'Kansas',
+  'Kentucky',
+  'Louisiana',
+  'Maine',
+  'Marshall Islands',
+  'Maryland',
+  'Massachusetts',
+  'Michigan',
+  'Minnesota',
+  'Mississippi',
+  'Missouri',
+  'Montana',
+  'Nebraska',
+  'Nevada',
+  'New Hampshire',
+  'New Jersey',
+  'New Mexico',
+  'New York',
+  'North Carolina',
+  'North Dakota',
+  'Northern Mariana Islands',
+  'Ohio',
+  'Oklahoma',
+  'Oregon',
+  'Palau',
+  'Pennsylvania',
+  'Puerto Rico',
+  'Rhode Island',
+  'South Carolina',
+  'South Dakota',
+  'Tennessee',
+  'Texas',
+  'Utah',
+  'Vermont',
+  'Virgin Island',
+  'Virginia',
+  'Washington',
+  'West Virginia',
+  'Wisconsin',
+  'Wyoming',
+];
+const autoComplete = function(e){
+  //console.log("ABC:", e.target.value);
+  let duplicates = 0;
+   for(let i=0; i< states.length && duplicates!==1 ;i++){
+        let j = 0;
+         while(j< e.target.value.length){
+          if(states[i].slice(0,j+1) === e.target.value[j]){
+               if(states[i+1][j]!== e.target.value[j]){
+                  console.log("State: ", states[i]);
+               }else{
+                  duplicates = 1;
+               }
+          }
+          j++ 
+        }
+    }
+             
+}
+
+// Code goes here
+const input = document.querySelector('#autocomplete');
+
+input.addEventListener ("input", autoComplete);
+
+
+console.log(input);
