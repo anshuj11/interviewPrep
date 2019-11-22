@@ -1,0 +1,55 @@
+Report
+Search
+2019-11-22 - Frontend - Video Call
+Type: Knowledge Trivia
+Topics covered: JavaScript, ReactJS, Frontend, ES6, JS Scope, Class Components, React State, React Render, React Lifecycle Methods, HTML, CSS
+Confidence: 3
+Question
+CSS
+1) What is responsive web design?
+2 ) How can you use CSS to do that?
+3) What is the difference between CSS3 and earlier versions
+4) Have you used bootstrap
+
+HTML
+1) What is new in HTML5 compared to earlier versions?
+
+JS
+1) Is it interpreted or compiled? Can you elaborate?
+2) What is a closure? What is the most commonly used example of closure?
+3) What is new in ES6
+4) What is the spread operator in ES6? It can be used to open an array, can it also be used to enclose separate elements into an array
+5) What is currying
+6) Are there data types in JS? What is the data-type of Undefined? What is the data- type of null? Why is it that?
+7) How does intheritance work in JS? How could you do it before ES6? What is prototype? If there is an object A and a function? 
+How would you add the function to that object?
+ 
+
+React
+1) Does browser understand React/JSX/ES6? How?
+2) What are higher order components? What inputs they take?
+3) What is component lifecycle? 
+4) Where would you use API calls in a react component?
+5) what is React?
+6) What is virtual DOM?
+7) What are arrow functions?
+8)What is destructuring?
+9)  What is object literal? String template literal?
+10) How will you decide how to compose an app using components? How will you pick functional or class components? Pure components? Smart components/ dumb components?
+
+
+Redux)
+1) If I want to display all the employee records on a webpage how would the data flow starting from components to backend.
+2) What is a store
+3) How do you pass store to the app
+4) How do you pass data from store to component
+5) How do you pass actions from action items to component
+6) what is a middleware? Where do we use it?
+7)What are the parameters that store take?
+8) What is a reducer? How is it structured?
+9) How do you pass data from store to a component?
+10) How do mapStateToProps, mapDispatchToProps get connected to the component?
+
+
+
+ 
