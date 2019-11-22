@@ -1,0 +1,6 @@
+60 mins ( the email said 27 mins)
+Efficient Janitor from HackerRank
+
+There are bags of trash weighing 1.01 lbs to 3.0 lbs. the janitor can only carry 3lbs at a time. How many minimum trips it would take him to drop all the bags in the trash-can outside.
+input:  Array: [1.01, 2.5, 1.5, 3.0, 1.99...]
+output: n:  ( integer denoting number of trips)
