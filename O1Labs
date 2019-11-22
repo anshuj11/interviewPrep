@@ -1,0 +1,8 @@
+Build a React component to print a list and position it horizontally in the center of the screen
+
+
+<screen
+
+Milk   Bread  Eggs
+
+</screen>
