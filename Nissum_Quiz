@@ -1,0 +1,140 @@
+1. class Employee {}  
+  * var e1 = Employee()
+  * var e1 = new Employee.prototype.constructor()
+  * var e1 = Employee.prototype.construction.call({})
+  * none
+
+2. function ReactComponent(){
+   this.render = function(){ 
+     console.log("rendering");
+     }
+}
+     
+    
+     
+     * ReactComponent.prototype.render()
+     * ReactComponent.render()
+     * new ReactComponent().render();
+     * none of the Above
+
+
+3. function ReactComponent(){
+   this.render = function(){ 
+     console.log("rendering");
+     }
+}
+var r1 = new ReactComponent();
+var r2 = new ReactComponent();
+console.log(r1.render === r2.render);
+* True
+* False
+
+
+class ReactComponent{
+  render(){console.log("rendering");}
+  }
+  var r1 = new ReactComponent();
+  var r2 = new ReactComponent();
+  
+  Note from Anshu: this doesn't make sense, I must have missed some detail
+  
+  * 2
+  * 1
+  * 0
+  * None
+  
+5.  Which one is valid (WOIV from now on)
+* function Employee(){var staticMethod = function(){}}
+* function Employee(){} Employee.staticMethod = function(){}
+* function Employee(){} Employee.prototype.staticMethod = function(){}
+* none
+
+ 6. Which one is valid
+* function ReactComponent(){ ReactComponent.prototype.render = function(){console.log("rendering");}}
+* function ReactComponent(){} ReactComponent.prototype.render = function(){console.log("rendering");}
+* Both A & B
+* none
+
+7. Output
+function block(){
+  outer_block: {
+     inner_block: {
+     console.log('1')
+     break;
+     outer_block;
+     }
+     console.log('2')
+  }
+}
+* 1
+* 1
+  2
+* 2
+* Error
+
+
+8.  Output
+var m = new Map();
+m.set("foo", 42);
+m.set({cool: true}, "hello world");
+var it1 = m.entries();
+it1.next();
+* "foo"
+* {value:["foo",42], done, false}
+* {cool: true}
+* none
+
+9. var x = 10;
+var o = {x:15};
+function f(){
+  console(this.x);
+  }
+  f(o)
+  * 15
+  * null
+  * 10
+  * none
+  
+  10. (function() {
+      var a=b=5;
+      })();
+      console.log(b)
+      
+      
+      * undef
+      * null
+      * error
+      * 5
+
+11. Correct hierarchyy
+* Object extends undefined
+* String extends function
+* Object extends function
+* None
+
+13 <script> </script> tags are used to embed JS code in HTML 
+* T 
+* F
+
+14. JS program cant read/write cookie values. Cookies could be read by server
+* T
+* F
+
+15. Which obj has var that specify the name and version of the browser thats running as well as var that indentify the platform on which its running
+* window
+* screen
+* document
+* navigator
+
+
+
+
+
+
+
+
+
+
+
+
+
