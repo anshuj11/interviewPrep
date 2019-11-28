@@ -1,0 +1,12 @@
+You have the following system:
+
+Users who are producing content
+Channels who are producing content and also sharing content produced by users
+content ( can be text or any other media)
+Users can follow other users or channels
+Users can like content
+Users can comment on content
+
+We want to show a feed on each users home-page which consists of the content produced by other users/ themselves and the channels they follow.
+
+How would you go about designing this system? How will you optimize the tables ( partition/sharding)? How will you write a query to generate the feed? will the feed be generated real time or pre-built?
