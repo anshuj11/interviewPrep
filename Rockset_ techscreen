@@ -1,0 +1,41 @@
+/*
+-- registers that an error -- occurred at the current timerecordError()
+-- returns # of errors in the past-- 60 minutesgetErrorCount()
+-- returns current time in seconds-- since epochavailable: getTimestamp() 
+*/
+
+
+var errCount = 0;
+var err = [];
+
+var t = [0, 10*60, 60*60, 60*60, 80*60, 90*60, 140*60];
+index = 0;
+
+// returns 0m, 10m, 60m, 60m, 80m, 90m, 140m
+function getTimeStamp(index) {
+  return t[index];
+}
+
+function recordError(index){
+  err.push(getTimeStamp(index));
+  let i;
+  for( i = 0; ((i < err.length) && (getTimeStamp(index) - err[i] > 3600));i++);
+  err = err.slice(i)
+  
+}
+
+function getErrorCount(index){
+  let i;
+  for (i = err.length - 1;( i > -1 && ((getTimeStamp(index) - err[i] )< 3600));i--);
+  console.log("i: ", i);
+  err = err.slice(i+1);
+  
+  return err.length;
+}
+
+recordError(1); // 10m
+recordError(2); // 60m
+recordError(3); // 60m
+console.log("Num Errors: ", getErrorCount(4)); // 80m
+recordError(5); // 90m
+console.log("Num Errors: ", getErrorCount(6)); // 140m
