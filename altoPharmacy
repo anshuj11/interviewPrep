@@ -1,0 +1,66 @@
+
+
+
+
+
+### Tech Screen ( Dec 2, 2019)
+
+/*
+We've built a web platform that powers our pharmacy and one of its core services is the Task system. A task is a single unit of work for an employee. There are many types of tasks, including but not limited to:
+
+- responding to a patient's message
+- requesting a renewal from a doctor
+- conducting a clinical assessment
+- troubleshooting an insurance rejection
+
+We want an employee to click a button and get the next task to work on using the following requirements: 
+
+- Each employee has a role that determines the types of tasks they can complete. For example, only pharmacists can conduct clinical assessments while only billing specialists can respond to a patient question about insurance billing.
+- Each task type has an expected turnaround time. For example, we want to complete  "respond to patient message" tasks within 30 minutes of being created and complete "troubleshoot insurance rejection" tasks within 3 hours of being created. An employee should get the task that is closest to missing its turnaround time.
+
+Your challenge is to write the code for a get_next_task method that accepts an employee object and returns the correct task object for that employee. By the end, you should have running code that you can demonstrate meets the requirements with either test data or actual tests.
+ */
+
+
+var emp_types = [ {type_id: 1, type_name: "Pharmacist"}, {type_id: 2,type_name: "Accountant"}]
+
+var tasks = [
+  {task_id: 1, task_name: "Respond to Msg", emp_type_id: [1,2], created_at: 1524379940, turnaround_time: 1800 },
+  {task_id: 2, task_name: "Respond to Msg", emp_type_id: [1,2], created_at: 1524379940, turnaround_time: 300 }, 
+  {task_id: 3, task_name: "Provide Billing Info", emp_type_id: [1,2], created_at: 2524379940, turnaround_time: 1800 }, ]
+
+// employee = {id: 123, type: 2} 
+
+function get_next_task( employee){
+ 
+ let min_task = null;
+  let min_time = Infinity;
+  let min_ind;
+ 
+ tasks.forEach( (task, ind) => {
+    if( task.emp_type_id.includes(employee.type)){
+      let time_elapsed = (Date.now()/1000) - task.created_at;
+      let delta = task.turnaround_time - time_elapsed;
+      if(delta < min_time){
+        min_time = delta;
+        min_task = task;
+        min_ind =  ind;
+      }
+    }
+ 
+ })
+ 
+ tasks = tasks.slice(0, min_ind).concat(tasks.slice(min_ind+1))
+  console.log("Remaining Tasks: ", tasks);
+
+ return min_task;
+ 
+}
+
+const emp1 = {id: 1, type: 1};
+const emp2 = {id: 2, type: 2};
+
+console.log("Assigned task: ", get_next_task(emp1));
+console.log("Assigned task: ", get_next_task(emp2));
+
+/* 
