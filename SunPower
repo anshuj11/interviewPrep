@@ -1,0 +1,14 @@
+find three elements in an array that add up to K.
+Assume:  All positive numbers
+                There is always one solution
+                 Only one solution is needed
+                 Use brute force solution if that feels easier
+
+
+What was your directory structure in Redux? What did each directory do.
+What is N+1 query? How do you avoid it?
+If you were fetching thousands of listings from your backend, how would you optimize the performance?
+What is the difference between React State and Props?
+
+Also asked some other candidate:  Find Permutations of a string
+ 
