@@ -1,0 +1,23 @@
+Given the Alice In Wonderland text file, find the top 10 most frequent words.
+
+https://s3-us-west-2.amazonaws.com/periscope-public/alice-in-wonderland.txt
+
+Example output:
+
+hello: 100
+world: 72
+...
+test: 5
+
+*/
+
+var text;
+function getText(){
+    // read text from URL location
+    var request = require('request');
+    request("https://s3-us-west-2.amazonaws.com/periscope-public/alice-in-wonderland.txt", function(error, response, body) {
+      text = body;
+      //console.log(text);
+      let top_ten = topTenWords(text);
+    })
+}
