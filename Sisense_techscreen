@@ -21,3 +21,61 @@ function getText(){
       let top_ten = topTenWords(text);
     })
 }
+
+
+
+
+
+function topTenWords(text){
+ 
+  let h = {}
+ 
+  let topTenW = [];
+  let topTenC = [];
+ 
+  text = text.split(" ")
+ 
+  text.forEach( word => {
+    if(word[word.length -1 ] === "." || word[word.length -1 ] === ",")
+      word = word.slice(0,word.length-1);
+     if (word !== ""){
+       if(h[word]){
+         h[word] = h[word]+1;
+
+       }else{
+         h[word] = 1;
+       }
+     }
+ 
+  })
+ 
+  let keys = Object.keys(h);
+  let values = Object.values(h);
+ 
+  for(let j = 0;j<10;j++){
+    let max = 0;
+    let maxInd = -1;
+
+    values.forEach( (el, ind) => {
+        if(el > max){
+            max = el;
+            maxInd = ind;
+        }
+    })
+    topTenW.push(keys[maxInd]);
+    topTenC.push(values[maxInd]);
+    keys = keys.slice(0, maxInd).concat(keys.slice(maxInd+1));
+    values = values.slice(0, maxInd).concat(values.slice(maxInd+1));
+   
+  }
+   
+  topTenW.forEach((w, i) =>{
+      console.log( w, ":", topTenC[i]);
+  })
+  //console.log(topTenW);
+ 
+}
+
+getText();
+
+
