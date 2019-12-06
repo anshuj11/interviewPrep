@@ -1,0 +1,33 @@
+It took place on 12/5 
+
+Round 1 - Interview with Founder
+
+Tell me about yourself.
+What kind of job you are looking for next?
+Why join a startup? Why not Google/Amazon - easy money?
+Asked me about the company I founded. 
+   -Did you have a business background?
+   -What is the plan for the company going forward?
+Asked me about my family
+   - What does your husband do?
+   - How old are the kids?
+   - How far do you live from here?
+He explained that he didn't mean to pry but was trying to understand what my risk taking capacity is at the moment.
+
+
+Round 2 - Interview with Frontend Engineer
+(This interview wasn't scheduled originally, so the engineer got pulled from her work and asked to interview me at the spur of the moment. She was also working on a tight schedule for her deliverables, apparently. She mentioned that her questions were haphazard because of that reason)
+
+Make a simple React component with nested components inside it.
+I made a functional component and was asked to change to a class based component
+How did you handle state in your projects? 
+How did you make the decision to use Redux? What else did you consider?
+Could you draw a chart in a React component. Use/google whatever library/tools you want to use?
+Could you use any library/api (leaflet??) to set a marker on San Francisco?
+What is a virtual DOM? How does React use it?
+What is the difference between state and props?
+Why use state?
+How will you handle an update to the cart if two users click on the same item and add it to their carts?
+How will you handle loads if suddenly 10x of the regular visitors visited your site?
+
+
