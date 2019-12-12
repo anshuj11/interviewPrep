@@ -1,0 +1,8 @@
+Ada Lovelace day 
+
+Ada Lovelace day is celebrated on 2nd Tuesday of every Oct.
+If an year is given as input, write a function to find the day in Oct when Ada Lovelace day will fall.
+
+e.g.
+Input : 2019
+Output: 8  //2nd tuesday is on Oct 8th
