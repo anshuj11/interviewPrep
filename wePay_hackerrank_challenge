@@ -1,4 +1,5 @@
-Ada Lovelace day 
+
+Q 1. Ada Lovelace day 
 
 Ada Lovelace day is celebrated on 2nd Tuesday of every Oct.
 If an year is given as input, write a function to find the day in Oct when Ada Lovelace day will fall.
@@ -6,3 +7,18 @@ If an year is given as input, write a function to find the day in Oct when Ada L
 e.g.
 Input : 2019
 Output: 8  //2nd tuesday is on Oct 8th
+
+Q 2. Move the zero
+
+You are given an NXM matrix which is populated by numbers from 0..(nXm - 1)
+  - input is reasonable ( no duplicates, no blank spaces etc)
+  -the goal is to keep swapping zero with the adjacent elements ( only on the side or top/bottom, not diagonals) until all the following conditions are met:
+      a) zero reaches at matrix[0][0]
+      b) all the numbers are lesser than the numbers to their right ( in the same row)
+      c) all the numbers are lesser than the numbers below them ( in the same column
+      
+  -output is the minimum number of moves to achieve this.
+  
+  Matrix can't be smaller than [2 X 2] can't be bigger than [5x5]
+  
+  
