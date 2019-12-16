@@ -7,6 +7,9 @@ I have doubts about how you will fit in in a company of Nova credit size..coming
 How fast can you pick new tools and technology?
 Why did you join a bootcamp? You are not their typical demographic.
 
+
+TechScreen 1:
+
 Write two functions for novaCredit website -
 
 const logHit(Date){
@@ -92,3 +95,9 @@ logHit(Date.now())
 logHit(Date.now())
 logHit(Date.now())
 console.log(getHits())
+
+
+
+TechScreen 2:
+
+Prompt: Write a webscraper to scrape images from lolcats.com
