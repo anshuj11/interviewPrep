@@ -1,0 +1,112 @@
+* Internal Tech Screen for Walmart 
+
+** Screenshare Coding questions:
+
+1. https://www.hackerrank.com/challenges/circular-array-rotation/problem
+
+2. https://www.hackerrank.com/challenges/append-and-delete/problem
+
+
+** Take Home Exercise
+
+Please try and complete the following exercise. Please complete it on GitHub and share the link with us or send us the code by email as attachment. Exercises like these are used by our clients to evaluate React candidates. We may share your solution with the client and ask that you be prepared to explain it and run your code during our screening.
+
+*** Step 1. Create a component that will render an Array of Tasks. Render first 5 initially, and only render the "details" property of each Task.  Your Task JSON Object should have the following structure:
+
+{
+
+id: Number, //This id needs to be Unique for each Task
+
+details: String,
+
+completed: Boolean
+
+}
+
+*** Step 2. Have a button that allows you to "Show More" which will render 5 additional JSON objects every time it is clicked, until there are no more Tasks to display.
+
+*** Step 3. Allow Tasks to be set to "completed" by rendering a checkbox component for each Task. Clicking this box should update the "completed" property of a Task to either true or false based on if the box was checked or unchecked.
+
+ 
+ 
+ Questions:
+
+1 - IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+2 - Closures in JS and examples (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+
+3 - Prototypal Inheritance (https://javascript.info/prototype-inheritance)
+
+4 - Variable scopes and hoisting (https://developer.mozilla.org/en-US/docs/Glossary/Hoisting).
+
+ 
+
+·         which object is the main entry point to all client side javascript features and APIs?
+
+·         what layout is used for 100% width in Bootstrap?
+
+·         What does the CSS code do?
+
+·         Which method in react component is called after the component is called after the component is rendered for the first time?
+
+·         How do you access a function fetch() from a h1 element in JSX?
+
+·         Which class makes thumbnail image in Bootstrap?
+
+·         In Bootstrap, the container class provides------------?
+
+·         what are the different HTTP methods available in REST?
+
+·         In React, what's used to pass data to a component from outside?
+
+·         In React, which of the following method define default values for properties using props?
+
+·         In react. which of the following represents the pre and post life cycle methods of components?
+
+·         How React works?
+
+·         What is JSX?
+
+·         Diff. b/w Class component and functional component?
+
+·         Diff b/w State and props?
+
+·         Define Redux and its uses.
+
+·         What is JSX
+
+·         What is React.create class?
+
+·         What is ReactDOM ?
+
+·         what is create-React-app?
+
+·         What is render() in React? And explain its purpose?
+
+·         What is the difference between React Native and React?
+
+·         Explain the components of Redux.
+
+·         How do you type checking in REACT?
+
+·         What is hoisting?
+
+·         What is the difference between let and var?
+
+·         Is JavaScript Synchronous or Asynchronous?
+
+·         Is JavaScript Synchronous or Asynchronous?
+
+·         What are higher order functions? •
+
+·         What is a closure?
+
+·         What is object prototype?
+
+·         What is the difference between call/apply?
+
+·         What is event propagation/ event bubbling?
+
+·         What is this , bind?
+
+ 
