@@ -1,0 +1,7 @@
+Write a program to find all the prime numbers between 1 - n .
+
+Write the simplest algorithm.
+How will you optimize it?
+Write the program using sieve of Eratosthenes.
+
+https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
