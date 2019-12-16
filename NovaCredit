@@ -1,0 +1,94 @@
+Behavioral:
+
+Tell me about your experience at Sun Microsystems? ( interviewer was also an ex-Sun employee)
+How did you transition to your own company?
+What are you looking for in your next role?
+I have doubts about how you will fit in in a company of Nova credit size..coming from large companies like Sun and Oracle.
+How fast can you pick new tools and technology?
+Why did you join a bootcamp? You are not their typical demographic.
+
+Write two functions for novaCredit website -
+
+const logHit(Date){
+//records hits on the website
+
+}
+
+const  getHit(){
+//returns the hits in last minute
+}
+
+
+
+// API for novacredit.com 
+
+
+--------------------I wrote the following code------------------------------
+const timeOfVisit= [];
+var hitCounter = 0;
+var dateCounter = 0;
+
+const logHit = (Date1) => {
+// log a visit to our site
+  //timeOfVisit.push(Date);
+  
+  // for(let i=0;i< timeOfVisit.length;i++){
+  //   if( (Date.now() - timeOfVisit[i])/1000)<=60)
+  //      break;
+  // }
+  
+  //Date.now() - dateCounter
+  
+  //datecounter - Date.now() < 60000
+     //hitCounter
+  // else
+  //hitCounter = 0;
+  //Datecounter = Date.now()
+  console.log("timestamp: ", Date1);
+  if(dateCounter === 0){
+    dateCounter = Date1;
+    hitCounter = 1;
+  }else{
+  
+    
+    if(Date1 - dateCounter < 60000){
+       hitCounter++;
+    } else{
+       hitCounter = 1;
+       dateCounter = Date1;
+    }
+  }
+  
+  //timeOfVisit = timeOfVisit.slice(i);
+  
+}
+
+
+const getHits = () => {
+ // return the number of hits in the last minute
+//   let nums = 0
+
+//   for(let i= timeOfVisit.length-1; i>-1;i--)
+//     if(( (Date.now() - timeOfVisit[i])/1000 ) <= 60 )
+//       nums++;
+  
+  if(Date.now() - dateCounter > 60000)
+    return 0;
+  else
+    return hitCounter;
+  
+
+}
+
+
+logHit(Date.now())
+logHit(Date.now())
+console.log(getHits())
+setTimeout( () =>logHit(Date.now()), 60000)
+
+logHit(Date.now())
+logHit(Date.now())
+logHit(Date.now())
+logHit(Date.now())
+logHit(Date.now())
+console.log(getHits())
