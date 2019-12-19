@@ -1,3 +1,5 @@
+# TripleByte Interview
+
 # ice-breaker 
 The person asked if I moved to bay-area at some point or if I was born and raised there. How did I like being in bay-area. He shared his eperience of living in Georgia(Russia). I think we spent like 5 mins talking about the pros-cons of SF bay. He said he didn't like San Francisco that much but couldn't quite put his finger on why.
 
