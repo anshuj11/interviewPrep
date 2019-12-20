@@ -5,7 +5,6 @@ The person asked if I moved to bay-area at some point or if I was born and raise
 
 He had a comnsiderable Russian accent which made it difficult to understand what he was saying. I had to ask him to repeat himself( sometimes twice) many times. He didn't seem to be annoyed by this and repeated whenever I asked.
 
-# interviewPrep
 # Coding Round : Screenshare ( I picked javascript for this)
 * Design a class to implement Spreadsheet. It takes in number of rows and columns and has two methods
  update and
