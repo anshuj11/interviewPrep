@@ -1,0 +1,21 @@
+Coderpad challenge.
+
+Design a dynamic form with the following fields:
+
+const apiResponse = {
+ channels: [
+'facebook',
+'email',
+],
+ schema: {
+   email: {
+     from: 'text',
+     name: 'email',
+     reply_to: 'email',
+//      custom_attribute: 'text',
+},
+   facebook: {
+     page_id: 'text',
+},
+},
+}
