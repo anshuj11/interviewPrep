@@ -66,7 +66,7 @@ Example - All the red hondas, between 30000 - 50000 miles located in Baltimore.
   * Q. Number of years of experience in software
   * Q. What did you work on
   * Q. What are you looking for in your next job
-        ( The interviewer commented on my desired job being 180 degree to my previou job)
+        ( The interviewer commented on my desired job being 180 degree to my previous job)
   * Q. What kind of company I would prefer
   * Q. If I had any questions other than the next steps
   
