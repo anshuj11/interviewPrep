@@ -64,3 +64,106 @@ console.log("Assigned task: ", get_next_task(emp1));
 console.log("Assigned task: ", get_next_task(emp2));
 
 /* 
+
+
+
+### Onsite
+
+/* 
+ 
+*/
+
+const prescriptions = [{
+  'medication': 'Aspirin',
+  'last_dispense_date': 7,
+  'next_billable_date': 15,
+  'end_of_supply': 28,
+  'days_supply': 21,
+  'cost': 25.0,
+}, {
+  'medication': 'Benadryl',
+  'last_dispense_date': 0,
+  'next_billable_date': 10,
+  'end_of_supply': 14,
+  'days_supply': 14,
+  'cost': 20.0,
+}]
+
+const hardPrescriptions = [{
+  'medication': 'Aspirin',
+  'last_dispense_date': 0,
+  'next_billable_date': 45,
+  'end_of_supply': 60,
+  'days_supply': 60,
+  'cost': 40.0,
+}, {
+  'medication': 'Benadryl',
+  'last_dispense_date': 40,
+  'next_billable_date': 62,
+  'end_of_supply': 70,
+  'days_supply': 30,
+  'cost': 25.0,
+}, {
+  'medication': 'Crestor',
+  'last_dispense_date': 48,
+  'next_billable_date': 70,
+  'end_of_supply': 78,
+  'days_supply': 30,
+  'cost': 20.0,
+}]
+
+// returns a tuple of the optimal alignment dispense date and the cost to Alto of syncing the meds
+function syncMeds(pr) {
+  const time_lmt = 28;
+  let res = [];
+  let maxLdt = -1;
+  let maxNdt = -1;
+ 
+  pr.forEach(el => {
+     if(el.last_dispense_date > maxLdt){
+       maxLdt = el.last_dispense_date
+     }
+     if(el.next_billable_date > maxNdt){
+       maxNdt = el.next_billable_date
+     }
+  })
+ 
+  for(let i= 0; i < maxNdt - maxLdt+1;i++){
+    res.push([i+maxLdt+1, 0]);
+  }
+ 
+  res.forEach(dt=>{
+   
+ 
+    pr.forEach(el => {
+        if(dt[0] < el.next_billable_date  && el.next_billable_date < dt[0]+28){
+            if(el.end_of_supply < dt[0]+ time_lmt){
+              dt[1]+= (dt[0]+ 28 - el.end_of_supply) * (el.cost/el.days_supply)
+            }
+        }
+     
+        if(dt[0] > el.end_of_supply){
+          dt[1]+= ( dt[0] - el.end_of_supply) * (el.cost/el.days_supply)
+         
+        }
+
+    })
+  })
+ 
+  console.log("Res: ", res);
+ 
+  res = res.sort( (a,b) =>  a[1] - b[1]);
+ 
+  console.log("LDT: ", maxLdt);
+  console.log("NDT: ", maxNdt);
+ 
+ 
+  // code here
+  return res[0];
+}
+ 
+//console.log(syncMeds(prescriptions)) // 15, 1.43
+ console.log(syncMeds(hardPrescriptions)) // 49, 5.83
+
+
+
