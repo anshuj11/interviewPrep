@@ -70,7 +70,10 @@ console.log("Assigned task: ", get_next_task(emp2));
 ### Onsite
 
 /* 
- 
+ The goal of the exercise is to sync the dispense date of all the prescriptions . with the following constaints:
+    1. The patient cant be without their medicine
+    2. If the patient is without medicine Alto picks up the tab for supplying medicines during that time window
+    3. We want to pick the sync date such that it minimizes cost to Alto
 */
 
 const prescriptions = [{
