@@ -8,6 +8,26 @@ Q1.  https://leetcode.com/problems/valid-palindrome-ii/
 I just got asked this question in a tech screen, and I am not sure if my solution was correct. 
 If you have seen/solved this question please share the link or solution.
 
+function findMaxPath(root, path = 0, maxPath= 0){
+  if(!root)
+     return path
+  if(root.left && root.val < root.left.val){
+     if(maxPath <= path){
+        maxPath = path+1
+     }
+     path = path+1;
+     return findMaxPath(root.left, path, maxPath)
+   }
+   if(root.right && root.val < root.right.val){
+      if(maxPath <= path){
+        maxPath = path+1
+     }
+     path = path+1;
+     return findMaxPath(root.right, path, maxPath)
+   }
+     
+}
+
 
 Notes:  Interviewer had a strong accent and was difficult to understand. She also seemed disinterested(but not rude) but 
 warmed up towards the very end when I asked her about her experience.
