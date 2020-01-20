@@ -1,0 +1,161 @@
+
+Actor Name Program v1.7
+=======================
+
+Description
+-----------------------
+
+Write a program that processes the included example file that contains people's
+names, outputs some statistics and generates output. Send us both the program
+and the output.
+
+Input:
+
+An arbitrary file with the same format as the attached example file. Your
+program will be tested on much (e.g. 1000x) larger files.
+
+Output:
+
+1. The unique count of full names (i.e. duplicates are counted only once)
+2. The unique count of last names
+3. The unique count of first names
+4. The ten most common last names (the names and number of occurrences)
+5. The ten most common first names (the names and number of occurrences)
+6. A list of 25 completely unique names (see below for details)
+7. A list of 25 modified names (see below for details)
+
+
+Assumptions About Names
+-----------------------
+
+Here are some assumptions you can make about names which are meant to make the
+program easier to write:
+
+1. Names start at the beginning of the line.
+2. Names follow these rules:
+     * Formatted "Lastname, Firstname"
+     * Contain only uppercase and lowercase letters
+
+Names that don't follow those rules can be ignored.
+
+
+Lists of Unique & Modified Names
+--------------------------
+
+Take the first N names from the file where both of the following are true:
+
+* No previous name has the same first name
+* No previous name has the same last name
+
+  For example, consider these names:
+
+    Smith, Joan
+    Smith, John
+    Smith, Sam
+    Thomas, Joan
+    Upton, Joan
+    Upton, Tom
+    Vasquez, Cesar
+
+  These names would be part of the list of N names:
+
+    Smith, Joan
+    Vasquez, Cesar
+
+  These names would not:
+
+    Smith, John     # Already saw a last name "Smith"
+    Smith, Sam      # Already saw a last name "Smith"
+    Thomas, Joan    # Already saw a first name "Joan"
+    Upton, Joan     # Already saw a first name "Joan"
+    Upton, Tom      # Already saw a last name "Upton"
+
+Your program must support an arbitrary value for N, but for your example output
+you may use 25.
+
+Once you have this initial list of 25 names, print it. Then print a new list
+that contains 25 modified names.  These modified names should only use first
+names and last names from the initial 25 names.  However, the modified list and
+the initial list should not share any full names, and no first or last name may
+be used more than once.
+
+  For example, if the initial list contains the names:
+
+    Brutananadilewski, Carl
+    Crews, Xander
+    Cartman, Eric
+    ... 22 more names ...
+
+  Then this is a valid output:
+
+    Brutananadilewski, Eric
+    Crews, Carl
+    Cartman, Xander
+    ... 22 more names ...
+     
+  But this is not (because "Barney" and "Bambam" weren't in the initial list):
+
+    Brutananadilewski, Eric
+    Crews, Barney
+    Cartman, Bambam
+    ... 22 more names ...
+
+  This is also incorrect (because "Cartman, Eric" is unchanged):        
+ 
+    Brutananadilewski, Xander
+    Crews, Carl
+    Cartman, Eric
+    ... 22 more names ...
+
+  This is also incorrect (because "Carl" is used multiple times):        
+ 
+    Brutananadilewski, Xander
+    Crews, Carl
+    Cartman, Carl
+    ... 22 more names ...
+
+
+Other Notes
+-----------
+
+You can pick the implementation language: Ruby, Python, C, Java, and JavaScript
+are all great choices. Something like bash is not. Choose a language you know
+well; scoring is not affected by the complexity or obscurity of the language. Feel
+free to use any libraries you would find helpful.
+
+The program should provide the correct answer!  First and foremost you should
+focus on finishing and getting the right answer.
+
+The program should be as time and memory efficient as you can make it.
+
+The program should be as concise and readable as possible.
+
+Brief comments explaining implementation choices are welcome, but not required.
+
+You can hardcode the name of the input file and the modified name count into
+your program (to make it easier to write) but it should otherwise be built to
+handle an arbitrary file with the same format as the example file.
+
+The input file is compressed, so you will need to decompress it first to get
+the plaintext file.
+
+Being fancy and clever is fine, but not at the expense of finishing, getting
+the right answer, and having readable code.
+
+
+Finishing Up
+------------
+
+You should submit your source code and the program output.  Please make sure to
+include both, preferably in a single archive file.
+
+Thanks for investing the time to do this!  We believe this should take you
+about an hour to write assuming you have proficiency with a programming
+language.  If you're close to finishing and time is about to expire, you should
+take a little more time and complete the program.
+
+If anything is unclear, email us and we'll get it cleared up.
+
+
+Yesware Take-Home Instructions.txt
+Displaying Yesware Take-Home Instructions.txt.
