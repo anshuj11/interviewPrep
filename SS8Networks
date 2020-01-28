@@ -1,32 +1,33 @@
 ## Phonescreen
 
-Javascript coderpad question - no execution
-
-How will you find the cube root of a given number?
-Implement using binary search
+Personal Pitch
+How many engineers were there working at Bloom And Bugs?
+What happens when we hit enter on google.com
+What are lifecycle methods and how do you use them?
+Programming problem - Find the cube_root of a number ( can be a fractional number)
 
 
 ## Onsite
 
-### JavaScript round
------------------
+You have an interesting resume. How did you start your own company and why are you looking outside?
+Walk me through the workflow of your website. How does the data flow from back- end to front-end.
 
-Find prime numbers from upto 0 to n
+How would you design the JSON for the following description.
+There are people who are nodes who can communicate( via phone calls or texts) with other people. 
+A communication between a pair forms a link.
 
+If you have to design a single sign on for a company which has many different products how will you approach it. 
+Eg. Google has gmail, youtube, drive etc but one sign on is sufficient for all of them.
 
-### System Design
----------------
-How will you design a single sign on system like Google which lets users to login to different services like Youtube, Drive, Photos with a single login
-
-Javascript theoritical questions
-
-If you have a system and a customer asks you to do something specific and different for them how will you handle it?
-
-
-### System + Programming
----------------------
-
-Explain how you designed your website backend to front end
+Implement isPrime in JavaScript. Optimize it.
+What is deep copy and shallow copy. How will you make a deep-copy it in JS?
+If you have a component with three forms, what will be the things to consider while designing it.
+What are pure components? Why shouldn't we use them?
+Could you make those forms reusable? What will you consider?
+If the customers demand a custom way of interaction that is not part of your regular process, how will you accommodate it?
+Have you had a situation when your employees went against you? How did you handle it?
+You have been working on your own for a long time, would you be able to work in a team setting?
+What do you see yourself doing 3 years from now?
 
 
 
