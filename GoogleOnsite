@@ -1,0 +1,152 @@
+Programming Round 1
+
+You have an array populated by only 1 and 0. For all the zeros find the count of possible subarrays.
+
+eg. [0.0,0,1,0,1]
+
+lets rename the zeros with their indices [0,1,2, 4] 
+
+subarrays [ [0], [1], [2], [4], [0,1], [1,2], [0,1,2]]
+
+count = 7
+
+What is the time complexity of your proposed solution
+What is the space complexity of your proposed solution
+
+
+My solution ( whiteboarding - no execution)
+
+function findSubarray( arr){
+let count =0;
+let temp =0
+ for(let i=0;i<arr.length;i++)
+  if(arr[i] === 0){
+      temp++;
+      count +=temp;
+  }else{
+      temp=0;
+  }
+}
+return count;
+}
+
+
+
+//I was solving it in a very tedious way, finding the real subarrays instead of just focusing on the count
+//but the interviewer gave me a major clue
+
+//time complexity O(n)
+//Space complexity O(k)
+
+Programming Round 2
+
+How will you find if an undirected graph has any cycles or not.
+
+I proposed some brute force solutions that were really really inefficient
+Interviewer asked if I had heard of DFS.
+Using that it became a very simple solution ( at least I think so).
+I sorta ran out of time at the end so the interviewer didn't get a chance to really walk through my solution and test.
+
+//Assumed graph structure
+
+//Array of nodes;
+
+//each node is [ node name, [node names which have an edge connected to this node]]
+
+
+function isCycle(arr){
+let dfs = [];
+let trav = [];
+for(let i=0;i<arr.length;i++){
+     let node = arr[i][0]
+      dfs.push(node)
+      while(dfs.length > 0){
+            let n = dfs.pop()
+            dfs.push( ...arr[n][1])
+            
+            if(trav.includes(n))
+                   return true;
+            else if(arr[n][1].length === 1)
+                    trav.pop()
+            else
+                    trav.push(n)
+      }
+   
+}
+
+return false;
+
+}
+
+Programming round 3 
+
+Q1 Given a binary search tree and an integer denoting the level, how will you find the largest value at that level.
+
+
+//I proposed finding the rightmost node at that level recursively and interviewer seemed to agree
+
+function findLargest(root, n){
+     if( level === 0)
+            return root[value]
+     
+   if(!root || (!(root.left)&&!(root.right)&&(level > 1))
+          return null;
+
+   if(root.left){
+          max = findLargest(root.left, n-1)
+         if(max)
+             return max 
+   }
+   if(root.right){
+        return findLargest(root.right, n-1)
+   }
+
+}
+
+Programming round 3
+
+Q2 Implement a function to return division of two integers upto given decimal places in the form of a string.
+
+follow up question: if there were no place given how will you figure out if this division will not terminate
+
+function divisionPrecision(A, B, places){
+  let str = ""
+  let quot = MAth.floor(A/B)
+  let rem =A%B
+  str = quot+""+"."
+  while(places > 0){
+     quot = Math.floor((rem*10) / B)  
+     rem = (rem*10)%B
+     str = str + quot
+      places--
+  }
+
+return str
+
+}
+
+System Design Round
+
+
+What are some of the design considerations you will have in implementing a distributed cache?
+It could be accessed worldwide.
+
+We want High availability, Low latency
+
+Mostly used for reads
+
+
+Behavioral round
+------------------
+
+Q. What qualities do you look for in your colleagues? 
+A. Consistency, Reliability, Communication if they are innovative, creative and resourceful that is a big plus.
+
+q. Tell me about a time whne you had to deal with a difficult colleague, classmate?
+
+Q. Tell me about a time when you took a risk
+
+Q. How will you make your work accesible for a diverse set of people ( disabled, speaking different languages etc)
+
+Q. How do you make sure that your work is more useful for customers
+
