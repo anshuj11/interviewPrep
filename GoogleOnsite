@@ -136,6 +136,22 @@ We want High availability, Low latency
 Mostly used for reads
 
 
+Followup questions -
+
+What happens when requests miss in the cache?
+
+How will you handle replacements when the cache is full?
+
+How will you handle spikes where way too many reads are coming for the same thing
+
+how will you save your servers from hotspotting?
+
+What are some of the abuse scenarios you can think of? How will you protect against those?
+
+What is sharding.
+
+
+
 Behavioral round
 ------------------
 
