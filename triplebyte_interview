@@ -1,0 +1,103 @@
+This is from a friend who passed the triplebyte interview
+
+The interview team sent me a few notes about your interview performance. They try to give honest, actionable feedback that you can use to prepare for onsites. Here it is; I hope it helps!
+
+Here's how we thought all the parts of the interview went:
+
+Coding section: very good
+Database short answer: mixed
+HTTP/Web short answer: mixed
+Data structures short answer: very good
+Low level short answer: poor
+Debug section: mixed
+Used car API problem: very good
+Technical communication: very good
+
+Here are the notes that your interviewer took on your interview. (We don't send these raw notes to the companies that we introduce you to. Instead, we use them to prepare a summary that focuses on how your strengths make you a fit for certain roles; companies see this summary and a set of scores based on your interview performance.)
+
+
+*CODING SECTION*
+He asked if we would be concerned about large board sizes (board sizes other than 3x3) and let me know that he was not focussing on performance while working on this.
+
+If performance mattered, he would have kept an ‘empty’ spaces list list so that a move can be selected with O(1) time and the board full can be checked with O(1) as well.
+
+*===Good====*
+THE BEST THING:
+Interesting, modular class hierarchy!
+
+A separate class called Player was created. A player can make a move on the board.
+
+Two separate classes called “Computer” and “Human” which extend player. The computer players move function generates a RANDOM move, the human players move function gets input from the user.
+
+1. Hardcoded 3x3 array of ‘-’ to represent the board.
+2. Validation for out of range token and token placed in a cell that is not empty is written in step 1 and throws an exception (defensive programming preference, though he didn’t catch everything)
+3. incremental testing.
+4. The logic being generated is clear, easy to understand. Variables are named well.
+5. Separate class for game as well. Good modular choices.
+6. Asks good questions. Are validations important? Do you care about efficiency? Will this be tested for large board sizes?
+
+*===Bad/Could-be-better===*
+
+1. I’m not a fan of the AI function being recursive where a loop would do just as well.
+2. Inconsistent behavior between players getMove and computers getMove. The computers getMove makes a move on the board, the players getMove returns the move that the user wants to make. The signatures don't match.
+
+This is one of those inconsistencies that a language like Java would have outright prevented.
+
+SHORT ANSWER IMPRESSIONS
+
+Communication is concise and to the point, when he doesn’t know, he doesn’t know and we just move on. Nice.
+
+*===Backend-web===*
+
+He was ok on the basics of both web and http but didn’t have significant knowledge in optimization / cacheing.
+
+When talking about cacheing, he said he would store database results, store precomputed answers and talked about cache invalidation. All good signs but wasn’t too crisp about what makes redis better than a database for cacheing stuff and what the benefits of using a CDN are.
+
+*===Algos===*
+
+This was a strong section and his communication here was good. he used the right technical words to describe things and remembered details about algorithms that others might forget.
+
+*===Low-level===*
+
+Complete non-starter and definitely not a focus area.
+
+*DEBUG*
+
+print statements are put into the program almost immediately. The candidate tries to develop a high level understanding of the program as he looks through the functions and libraries being called.
+
+[bug1]
+Eventually he found the file type list, and seemed extremely confused by it, but eventually does add svg to it. He was unsettled by the lack of documentation.
+
+[bug2]
+Candidate noted our invalid url message 27 minutes in, searched for the error in the log to find the right section of code, and even spotted the cleanup function but didnt’t spot the hash.
+
+*SYSTEM DESIGN*
+
+1. makes sure he understands the problem (2 minutes)
+2. Talked about the db design, and talked unsteadily through the compromises and arrived at a reasoned decision to use just one cars table (2 min)
+3. Touched briefly on the API but didn’t get into depth (1 min)
+4. Interviewer led the rest of the discussion (6 minutes)
+
+DB:
+
+1. Relational database to store the assosiations
+2. Single table, indexes on columns that we will search by.
+3. postgres
+
+API:
+
+1. Just a GET, REST API
+2. Query params, color=red&miles[max]=50000
+3. Results per page, or range. He wasn’t too clear about how to handle this. I
+4. Ruby on Rails
+
+Deployment:
+
+1. Heroku
+2. Get a domain, get an account, push the code to the heroku instance.
+
+===At a Glance===
+
+Candidate came up with a reasonable junior developer level description. He was fuzzy around how to handle pagination and doesn’t seem used to leading such discussions but will likely be able to do a reasonable job with google.
+
+As you begin to prepare for your onsites, I recommend taking a look at these resources. I particularly recommend you take a look at the section "Web systems knowledge". Triplebyte also has a blog post on passing programming interviews that you might enjoy taking a look at.
