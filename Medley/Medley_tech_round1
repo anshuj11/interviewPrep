@@ -1,0 +1,129 @@
+In a 2D grid of 1s and 0s find islands ( 1s which have neighbors as 1 (up down left right))
+
+Res: I could see the issue but couldn't fix it in given time.
+I solved it right after the interview:
+
+'use strict';
+
+const fs = require('fs');
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', function(inputStdin) {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', function() {
+    inputString = inputString.split('\n');
+
+    main();
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+/*
+ * Complete the 'numIslands' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts 2D_INTEGER_ARRAY grid as parameter.
+ */
+
+// TC#1
+// 1 0 1
+// 1 0 0 => e - 2, a - 3
+// 0 0 0
+
+// TC#2
+// 1 1 0 0 0
+// 1 1 0 0 0 => e - 3, a - 7
+// 0 0 1 0 0
+// 0 0 0 1 1
+
+// TC#3
+// 1 1 1 1 0
+// 1 1 0 1 0 => e - 1, a - 9
+// 1 1 0 0 0
+// 0 0 0 0 0
+
+function numIslands(grid) {
+    // Write your code here
+    const seen = new Set;
+    let numIslands = 0;
+    
+    function markNeighbors(x, y) {
+       //  x + 1, y
+       //  x - 1, y
+       // x, y + 1
+       // x, y - 1
+        if ( seen.has(`${x}:${y}`))
+         return;
+       seen.add(`${x}:${y}`); 
+       
+       if ( x > 0 && grid[x - 1][y] === 1) {
+           const key = `${ x - 1}:${y}`
+           // seen.add(key)
+           markNeighbors(x - 1, y)
+       }
+       if ( x < grid.length - 1 && grid[x + 1][y] === 1){
+           const key = `${ x + 1}:${y}`
+           //seen.add(key)
+           markNeighbors(x + 1, y)
+       }
+       if ( y > 0 && grid[x][y - 1] === 1) {
+           const key = `${x}:${y - 1}`
+           //seen.add(key)
+           markNeighbors(x, y - 1)
+       }
+       if ( y < grid[0].length - 1 && grid[x][y + 1] === 1) {
+           if( y === 0 && x === 1) {
+                console.log({x})
+                console.log({y})
+                console.log({seen})
+           }
+           const key = `${x}:${y + 1}`
+           //seen.add(key)
+           if( y === 0 && x === 1) 
+              console.log({seen})
+           markNeighbors(x, y + 1)
+       }  
+    }
+    
+    
+    for (let i = 0; i < grid.length; i++) {
+        for (let j = 0; j < grid[0].length; j++) {
+            let key = `${i}:${j}`;
+            if( grid[i][j] == 1 && !seen.has(key)) {
+                // mark current position as visited?
+                markNeighbors(i, j);
+                numIslands += 1;
+            }
+        }
+    }
+    return numIslands;
+}
+
+function main() {
+    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+
+    const gridRows = parseInt(readLine().trim(), 10);
+
+    const gridColumns = parseInt(readLine().trim(), 10);
+
+    let grid = Array(gridRows);
+
+    for (let i = 0; i < gridRows; i++) {
+        grid[i] = readLine().replace(/\s+$/g, '').split(' ').map(gridTemp => parseInt(gridTemp, 10));
+    }
+
+    const result = numIslands(grid);
+
+    ws.write(result + '\n');
+
+    ws.end();
+}
