@@ -2,9 +2,6 @@ const Mocha = require('mocha');
 const expect = require('chai').expect;
 const mocha = new Mocha();
 
-//Hey Pamela, are you there?
-
-
 /**
   Welcome to the One Medical Lab! We have a number of items in stock to make sure
   we can keep our patients happy and healthy.
