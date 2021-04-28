@@ -1,0 +1,17 @@
+Interviewing in 2019
+What is has_many association?
+What is belongs_to? How is it different from has_one?
+What are polymorphic association?
+
+
+
+Interviewing in 2021
+Round 1: Interview with Engineering manager Harry Jiang (4/5/2021)
+
+What are polymorphic associations ?
+What is an N + 1 query ?
+What are some ways to optimize query throughput? Indexing
+What is ActiveRecord and what does it do in rails?
+
+They said they will give me a take home for the next round.
+Take home in the same dir
