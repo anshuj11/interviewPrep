@@ -1,6 +1,17 @@
 Hiring Manager Intro
   Work history
   Introductions
+Interview with CTO - informal chat mostly about InformedK12  
 Take Home + solution - Uploaded in the same folder  
-  
-  
+
+Onsite
+Based on a small repo shared a couple of days before interview: Pet-Guesser App
+
+  3 Rounds 
+    * Technical Round 1 - Debug
+    Go over the main calculation heavy method  line by line and discuss if yoiu see any issues
+    * Techinical Round 2 - Add a feature
+    Besides Dog and Cat, add another pet to the list of guesses and update the code.
+    
+    * Hiring Manager Debrief
+    Demo of the application
