@@ -1,0 +1,17 @@
+Hiring Manager Interview
+  Deep dive into one challenging task from work experience
+  Some rails questions
+ 
+Onsite
+  Rails debug
+    Interviewer gave me different code snippets and asked me to find the issues with them
+  
+  Rails application
+    Build an online school ( very limited scope)
+ 
+ Data modeling
+   Two tables with some properties
+   List of operations
+   How will you do those operations
+   ( Strong db normalization understanding was needed)
+   acreenshot of the problem in the same folder
