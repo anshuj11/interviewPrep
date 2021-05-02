@@ -1,0 +1,157 @@
+Automated 2 hour test via codility
+Google solution is allowed
+No video
+
+Pearson
+-------------
+1.5 hours with a 3 member panel
+
+
+DSA
+   What is the best sorting algorithm on the basis of time complexity 
+    Quicksort ( O(nlogn)
+   Is this the best that can be done?
+    Kinda..
+   What if we have some more knowledge about the input set
+   What if there was no constraint over space?
+      We can organize input on the basis of its value and do it in O(n) time
+   Is Merge Sort in place?
+      Yes
+   How much space will be needed for merge sort
+      Are we taking recursion stack into account?
+       
+  What are hashes?
+   How do they work?
+   What are the characteristics of a good hashing function?
+   How will you resolve collisions
+   
+
+SQL
+   Tell me the basic structure of a SQL query?
+      Select * from <table> where <condition>
+    How will you get the number of users belonging to a specific zip code ?
+      Select count(*) from Users group by zip
+     How will you limit the above query to show only counts from zip codes where number of users is greater than 1000
+       Select count(*) as  ( I gave wrong answer) Right answer is using  - GROUP BY, HAVING
+
+
+Ruby on Rails (System Design)
+   Is your web-application cloud based?
+   How do you create a table in rails?
+   How do you delete a table?
+   How will you build an api endpoint in Rails?
+   Can you make an api endpoint without a controller?
+   If you have an application and you want to test how it scales, how will you do it
+     Send lots of requests using something like postman or from front-end
+   Have you done it?
+      Only for testing, not for scale.
+  Have you looked at resource utilization while creating artificial traffic?
+     No
+   Suppose CPU utilization, memory usage is all good but still the performance is suffering, where would you look next?
+   Requests to DB
+   What if they seem alright too?
+   Where will you look in your rails server to improve performance? 
+   Do you know anything about rails workers?
+
+   What is class?
+   What are the benefits of OOP
+   Does ruby have private methods?
+   Does ruby have inheritance?
+   Some discussion reg class methods and instance methods
+ 
+
+JavaScript / FrontEnd
+
+   What is an IFFE ?
+   Where do you store functions that are being used in many places? Utility folder
+   Is it just a collection of methods? Yes
+   What do you know about node.js ?
+   Is JS singlethreaded or multi threaded
+      single-threaded
+   How will you bring some amount of multithreading in JS
+       Event-queues
+    If you have to store the chronological order of an offline test, what are the pitfalls?
+      The user can mess with their system clock and throw off our time tracking
+   What will you use to track time?
+       setTiemOut
+   Does it bypass, system time?
+     Not sure.
+   How did you store images in S3 buckets ( made calls from front end or backend )?
+   Was there a security key?
+
+
+Happy Money
+
+Tic Tac Toe: check if X win, 0 win or in progress or tie
+
+Design stream of event social networking system. Eg FB Live feed
+
+Kafka
+Topics reached limit the how then?
+Likes how do we store in db?
+How speed up getting likes?
+Wat api to get streaming data?
+
+https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
+PaginationPermalink
+Limit/Offset Paging would look like GET /items?limit=20&offset=100. This query would return the 20 rows starting with the 100th row.
+Behavioral: what product you learned and production ready
+
+  
+     
+Evidation Health - Online tech screen - 2 hours - 6 questions
+
+ to get the month with maximum records from Seattle
+select count(*) as cnt, Month(date) as mon from users
+where city = 'Seattle'
+group by Month(date)
+order by cnt desc
+limit 1
+No execution capability, just write the answer
+
+Q1. SQL
+
+Table schema
+User_id, date, city
+ (1, '2015-03-01', 'Seattle'),
+  (1, '2015-04-06', 'Portland'),
+  (22, '2015-02-23', ‘New York')
+
+Write a query to get count of records from Seattle for every month
+          select count(*) from users
+          where city = 'Seattle'
+          group by Month(date)
+
+Write a query
+   c. Which SQL framework you used to do it?
+     MySQL
+
+Verified in this sandbox : http://sqlfiddle.com/#!9/a4ab3e/4
+
+2. There’s an operation to read a byte. Arrange the options in the ascending order of time if it is being read  from L2 Cache, SSD, HDD, RAM, Redis.
+
+
+‘Redis is on a distributed machine in the same building’
+
+
+3.  Programming question to read 2 csv files and do a join and output it in a specific way.
+ A subdir in this dir
+
+
+4. Design the class structure and function signatures ( but no implementation) of tic-tac-toe
+
+5. There is an api end point which is called every time a user views a given page
+
+/pageview?n=N
+
+
+The value of total_pageviews is incremented by N
+And the new value is being written to the disk
+
+The server is not able to keep up with the requests? What are the issues?
+How would you solve it?
+
+
+6. If you are looking at the linux server of your data pipeline. One job that took half an hour to finish is taking 8 hours now. What are some possible hypothesis and how will you verify each of those.
+Queue is backed up ( depends on who is maintaining queue - redis, kafka)
+A high priority job is stuck in a retry loop - check logs (splunk, rollbar, datadog) to see if the same is getting retried over and over.
