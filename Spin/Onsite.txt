@@ -1,0 +1,98 @@
+   SPIN Onsite
+  Asked me to implement only the third exercise  from below ( highlighted in bold) but I included the complete challenge so I could build it if I need to practice.
+
+# Spin Code Challenge
+
+Since Spin relies on geographical features of PostgresQL, your challenge will be to implement a few geo-related features from our backend. Of course, your are not expected to build a frontend for these, but instead use your tests as the interface.
+
+## Setup and requirements
+
+* Create a Github repository. We'll fork this repo into our org so we can review.
+* Push code regularly with meaningful commit messages.
+* No authentication layer is needed
+* Tests are required, though not at 100% coverage.
+* Test enough to make you confident that the feature will work. Use your best judgement here. If you think of edge cases, include them as you see fit!
+* You must use PostGIS functions somewhere in your code via the `activerecord-postgis-adapter` (included in Gemfile). Don't rely only on Ruby gems to perform geographic calculations.
+* When done, invite `dirkdk` to your github repo and email your recruiter that you did.
+
+## Challenge details
+
+You have a fleet of 50 scooters in San Francisco. Your goal is to construct REST API endpoints and responses for these clients.
+
+1. Scooter with IoT capabilities reporting its current location and battery life
+
+Vehicles will report their lat/long and battery level, every 5 seconds, during a trip.
+
+2. Mobile app used by our operations team
+
+This app should be able to:
+
+* Open a maintenance ticket
+* Mark a scooter as inactive and being picked up for maintenance
+
+3. Mobile app used by customers
+
+This app should be able to show where active scooters are on a map within a given radius from the user's current lat/long location.
+
+Active scooters are defined as those having >= 30% battery life and not picked up for maintenance.
+
+Bonus points: Scooters should only be visible during the 9am - 5pm riding window in the US Pacific time zone.
+
+
+## Things we'll ask you about in the code review once you come onsite
+
+* How would you design this data model to efficiently handle historical data queries when that table reaches 100M records?
+* Where are there be caching opportunities?
+* What are ways to support multiple types of vehicles, e.g. ebikes or go cars
+* How do you guarantee the correct state of a vehicle?
+
+# Setup via Docker
+
+If you don't want to setup services locally, you can use the enclosed `docker-compose.yml` to get started.
+
+## Install docker for Mac (or Linux)
+
+## Build images
+
+`docker-compose build`
+
+## Setup database
+
+`docker-compose run web rake db:drop db:setup`
+
+## Enter web container and possibly run rails console (or if installed rspec)
+
+### First start services
+`docker-compose up`
+
+### Enter web container
+`docker-compose exec web bash`
+
+### Start rails console
+and then you can run
+
+`rails console`
+
+AJ: I wasn’t able to get the app running during the interview because there was ruby version mismatch so I just wrote the code without being able to run it.
+
+*** Product manager interview - 15 mins
+
+If you are supposed to complete 10 tasks by a deadline and you realize halfway through that you are going to miss the deadline on 5 of those. What will you do?
+
+*** QA Manager 
+Some questions around testing methodologies and automation of testing
+     
+*** Hiring Manager - 45 mins
+  My questions 
+Why would Ford acquire Spin? What is the Product fit?
+What are some of the traits of top performers you have worked with?
+  Questions he asked
+How do you maintain the quality of code
+   automation - linting tools, running regressions, using tools like sonarqube
+   manual effort - thorough PR reviews, adding unit tests
+How have you resolved conflict in the past
+Communication
+Adding more stake holders
+Checking my ego at the door
+Picking my battles
+     
