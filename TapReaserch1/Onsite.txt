@@ -1,0 +1,7 @@
+Part1 - 
+
+You are given two strings - write if str2 is a permutation of str1
+
+Implemented in Ruby with index function
+Updated test cases to cover it
+Suggested to use map to implement it more efficiently
