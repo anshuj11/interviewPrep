@@ -1,7 +1,88 @@
-Part1 - 
+Onsite Round1 
 
 You are given two strings - write if str2 is a permutation of str1
 
 Implemented in Ruby with index function
 Updated test cases to cover it
 Suggested to use map to implement it more efficiently
+---------------------------------------------------------------------
+Onsite: Round 2
+
+// Design a slot machine
+// User pulls a lever and if the amount is more than min amount then they can play
+// play is 3 randomized values choosing from set of three
+
+
+"use strict";
+
+// you can write to stdout for debugging purposes, e.g.
+console.log("This is a debug message");
+
+// Assumption: If a user wins they double their bets
+class SlotMachine {
+  constructor(min) {
+      this.minBalance = min;
+  }
+}
+
+class SlotMachineUser {
+    constructor(machineMinBalance) {
+        this.amount = 0;
+       // this.minBalanceToPlay = 5;
+       this.sm = new SlotMachine(machineMinBalance)
+    };
+    
+    pullLever(input) {
+        if(input  ){
+           if (this.amount >= this.sm.minBalance) {
+            this.play();
+           } else {
+               console.log("You dont have enough amount to play. Please add at least:", this.sm.minBalance - this.amount);
+           }
+        }
+    }
+
+    play() {
+      const val1 = Math.floor(Math.random()* 3);
+      const val2 = Math.floor(Math.random() * 3);
+      const val3 = Math.floor(Math.random() * 3);
+      this.displayResult(val1, val2, val3);
+      const win = this.calculateResult(val1, val2, val3);
+      this.updateAmount(win)
+    }
+
+    calculateResult(v1, v2, v3) {
+      let win = false;
+      if (v1 === v2 && v2 === v3) {
+        console.log("Oops! Better luck next time")
+        this.amount = 0;
+      } else {
+        console.log("Yaay!! you won")
+        this.amount = 2 * this.amount;
+        win = true;
+      }
+      return win;
+    }
+    displayResult(v1, v2, v3) {
+      console.log(`Your numbers: ${v1}, ${v2}, ${v3}`)
+    }
+    
+    updateAmount(win) {
+       win ? this.amount *= 2 : this.amount = 0;
+    }
+
+    addAmount( amt ) {
+      this.amount += amt
+    }
+
+};
+
+let user1 = new SlotMachineUser(20);
+user1.pullLever(true)
+user1.addAmount(10);
+user1.pullLever(true)
+user1.addAmount(10);
+user1.pullLever(true)
+user1.pullLever(true)
+user1.pullLever(true)
+user1.pullLever(true)
