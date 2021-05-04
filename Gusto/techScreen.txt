@@ -1,0 +1,31 @@
+expected = {
+   'id': '5370',
+   'first_name' : 'John',
+   'acount' : {
+      'bank': 'Bank of America',
+      'number': 67772
+    }
+ };
+ 
+ actual = {
+   'id' : '20',
+   'last_name' : 'Kennedy',
+   'account' : {
+      'bank': 'Bank of America',
+      'balance': '20.0'
+   }
+ }
+ 
+ 
+ return diff = [
+  [ '-', 'id', '5370'],
+  ['+', 'id', '20'],
+  ['-', first_name, 'John'],
+  ['+', 'last_name', 'Kennedy'],
+  ['-', 'account.number', 67772],
+  ['+', 'account.balance', '20.0']
+ ]
+ 
+ 
+ did it by recursively calling a diff function if the value was an Object itself.
+ Also neededf to handle the nested keys by passing a parent key in the function
