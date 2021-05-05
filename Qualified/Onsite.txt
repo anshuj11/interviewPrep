@@ -1,1 +1,70 @@
-Round 1. Design and Architecture with Brandon & Josh 1 hr
+Round 1. Programming
+
+Qualified Onsite
+
+Dynamic Programming Question
+The user is given an array of number of nights and after nth night the manager needs to keep n+1th night empty for housekeeping stuff. So back to back reservation requests won’t be accepted. You need to maximize the number of nights reserved in the hotel without booking back to back reservations.
+
+maxReserve([4,9,6]) // 10
+maxReserve([4,11,6]) // 11
+
+Did it via recursion first. It was inefficcient as expected.
+Q. What is the time complexity of this solution
+A. 2**n
+Did it via DP (tabulation) next. It took me some time to figure out but in the end I was able to finish it
+   within the hour.
+ Was able to test my solution with some meaningful test cases.  
+
+
+
+System Design Question
+Context:
+
+When a visitor lands on a page, a specific chat bot is triggered, and follows a sequence of steps, 
+with some conditional logic based on how the visitor answers questions along the way. 
+An admin builds chat bots by configuring which pages they trigger on and what steps they follow.
+
+Each step can be:
+- a simple text message (e.g. “Welcome!”)
+- a question (multiple choice or text input)
+- an alert to sales reps
+
+
+
+    
+
+   
+Problem:
+
+If the visitor is in the middle of a chat bot experience (e.g. reading more about chat bots), 
+and navigates to a different page, a new chat bot is triggered and starts from the top. 
+This can be a jarring experience for the visitor.
+
+How do we make this experience better?
+
+chatbots
+    id
+    name
+
+steps
+   id
+   chatbot_id, not null
+   info type: text
+   type type:string
+   left_child_id type:integer
+   right_child_id 
+
+visitors
+   id
+   cookie
+   name
+   email
+   address
+   phone
+   info: JSON
+
+visits
+  visitor_id, chatbot_id, step_id
+
+
+
