@@ -1,0 +1,93 @@
+Part 1. Rapid fire System Design questions:
+
+1. Where will you prefer Strong consistency vs. eventual consistency?
+  - page clicks for analytics
+  - streaming media metadata
+  - Bank deposits and withdrawls
+  
+   
+2. Showed a line diagram of data pipeline with throughput number assigned to each stage
+  - what is the throughput of the entire pipeline
+  - How do you improve it
+  
+  
+  Part 2.  Programming
+  
+  1. Domains and their click count ( parse from a csv kind of input (no file)) and turn it into a hash output for each domain and subdomain
+  
+  
+
+2. We have some clickstream data that we gathered on our client's website. Using cookies, we collected snippets of users' anonymized URL histories while they browsed the site. The histories are in chronological order, and no URL was visited more than once per person.
+
+Write a function that takes two users' browsing histories as input and returns the longest contiguous sequence of URLs that appears in both.
+
+Sample input:
+
+user0 = ["/start", "/green", "/blue", "/pink", "/register", "/orange", "/one/two"]
+user1 = ["/start", "/pink", "/register", "/orange", "/red", "a"]
+user2 = ["a", "/one", "/two"]
+user3 = ["/pink", "/orange", "/yellow", "/plum", "/blue", "/tan", "/red", "/amber", "/HotRodPink", "/CornflowerBlue", "/LightGoldenRodYellow", "/BritishRacingGreen"]
+user4 = ["/pink", "/orange", "/amber", "/BritishRacingGreen", "/plum", "/blue", "/tan", "/red", "/lavender", "/HotRodPink", "/CornflowerBlue", "/LightGoldenRodYellow"]
+user5 = ["a"]
+user6 = ["/pink","/orange","/six","/plum","/seven","/tan","/red", "/amber"]
+
+Sample output:
+
+findContiguousHistory(user0, user1) => ["/pink", "/register", "/orange"]
+findContiguousHistory(user0, user2) => [] (empty)
+findContiguousHistory(user0, user0) => ["/start", "/green", "/blue", "/pink", "/register", "/orange", "/one/two"]
+findContiguousHistory(user2, user1) => ["a"] 
+findContiguousHistory(user5, user2) => ["a"]
+findContiguousHistory(user3, user4) => ["/plum", "/blue", "/tan", "/red"]
+findContiguousHistory(user4, user3) => ["/plum", "/blue", "/tan", "/red"]
+findContiguousHistory(user3, user6) => ["/tan", "/red", "/amber"]
+
+n: length of the first user's browsing history
+m: length of the second user's browsing history
+
+
+**/
+
+var user0 = ["/start", "/green", "/blue", "/pink", "/register", "/orange", "/one/two"];
+var user1 = ["/start", "/pink", "/register", "/orange", "/red", "a"];
+var user2 = ["a", "/one", "/two"];
+var user3 = ["/pink", "/orange", "/yellow", "/plum", "/blue", "/tan", "/red", "/amber", "/HotRodPink", "/CornflowerBlue", "/LightGoldenRodYellow", "/BritishRacingGreen"];
+var user4 = ["/pink", "/orange", "/amber", "/BritishRacingGreen", "/plum", "/blue", "/tan", "/red", "/lavender", "/HotRodPink", "/CornflowerBlue", "/LightGoldenRodYellow"];
+var user5 = ["a"];
+var user6 = ["/pink","/orange","/six","/plum","/seven","/tan","/red", "/amber"];
+
+
+
+
+function matchHist (u, v) {
+  let maxLen = 0;
+  let maxHist = [];
+  u.forEach ( (el,i) => {
+    let vi = v.indexOf(el);
+    if ( vi !== -1) {
+      let ui = i + 1;
+      vi += 1;
+      let matchCnt = 1;
+      let matchHist = [el];
+      while (  ui < u.length && vi < v.length && u[ui] === v[vi]){
+        matchHist.push(u[ui])
+        
+        matchCnt += 1;
+        ui += 1;
+        vi += 1;
+      }
+      
+      if ( maxLen < matchCnt){
+        maxLen = matchCnt;
+        maxHist = matchHist;
+      }
+    }
+    
+    
+  }
+    
+  );
+  return maxHist;
+}
+
+console.log( matchHist(user0, user1))
