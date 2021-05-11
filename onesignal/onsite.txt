@@ -1,7 +1,7 @@
 Round 1
 ----------
 Q. SQL Murder mystery
-
+Very cool exercise with SQL queries
 
 Round 2
 ---------
@@ -9,7 +9,7 @@ Coding interview
 
 
 
-
+https://gist.github.com/RyanAmos/d218bd61defa4a3c05c3788b42a298c4
 In Memory Database
 The goal of this exercise is to build an in memory key value database that supports a set of commands. You will be given an input file to be read from STDIN and output should be sent to STDOUT. You will be expected to implement the following commands:
 
