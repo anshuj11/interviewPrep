@@ -1,0 +1,135 @@
+Round 1
+----------
+Q. SQL Murder mystery
+
+
+Round 2
+---------
+Coding interview
+
+
+
+
+In Memory Database
+The goal of this exercise is to build an in memory key value database that supports a set of commands. You will be given an input file to be read from STDIN and output should be sent to STDOUT. You will be expected to implement the following commands:
+
+GET key - Prints the value at the specified key, or null.
+SET key value - Set the value at the specified key.
+UNSET key - Removes the value at the specified key.
+EXISTS key - Prints true or false if the key exists in the database.
+Testing
+To check that your program is working as expected, run:
+
+./my_program < INPUT.txt | diff OUTPUT.txt -
+If you get zero output, you know your code matched the expected output.
+
+INPUT.txt
+EXISTS A
+SET A 123
+GET A
+EXISTS A
+UNSET A
+GET A
+EXISTS A
+OUTPUT.txt
+false
+123
+true
+null
+false
+TRANSACTIONS-INPUT.txt
+SET A 123
+GET A
+BEGIN
+SET A 456
+GET A
+BEGIN
+UNSET A
+GET A
+COMMIT
+GET A
+ROLLBACK
+GET A
+TRANSACTIONS-OUTPUT.txt
+123
+456
+null
+null
+123
+TRANSACTIONS.md
+Transaction Support
+Should we have additional time, we'll add transaction support using the following commands:
+
+BEGIN - Start of a transaction.
+ROLLBACK - Discard any changes from the start of the last transaction.
+COMMIT - Commit any changes from the start of the last transaction to the dataset.
+
+
+round 3 - Behavioral
+
+ - What are some benefits of a small team size
+ - What are some disadavantages
+ - What do you look for in a good manager
+ - How would you influence 
+
+round 4:  Frontend Interview
+https://codesandbox.io/s/admiring-flower-ik67j?file=/src/App.js:0-1150
+Cow Clicker game
+
+App.js
+import React from "react";
+import "./styles.css";
+import { useState } from "react";
+
+// const dummy = (verb, uri) => {
+
+//   return 4;
+// };
+function dummy(verb, uri) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(4);
+    }, 2000);
+  });
+}
+
+
+async function getPoints() {
+   const verb = 'GET';
+   const uri = '/pts';
+   // Make a fetch call to backend to get this val
+   const result = await dummy(verb, uri);
+   return result;
+};
+
+export default function App() {
+  const [count, setCount] = useState(0);
+  const [loc, setLoc] = useState([50, 50]);
+  const moveCow = () => {
+    setLoc([loc[0] + Math.floor(Math.random()*10), 
+            loc[1] + Math.floor(Math.random()*10)]
+            );
+  };
+  
+
+  async function handleClick () {
+    const pts = await getPoints();
+    setCount(count + pts);
+    moveCow();
+    
+  };
+
+  return (
+    <div className="App">
+      <h1>Cow Clicker</h1>
+      <h2> {count}</h2>
+      <div className="pasture">
+        <div
+          className="cookie"
+          style={{ marginTop: loc[0], marginLeft: loc[1]}}
+          onClick={handleClick}
+        ></div>
+      </div>
+    </div>
+  );
+}
