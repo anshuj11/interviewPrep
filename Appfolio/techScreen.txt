@@ -1,0 +1,55 @@
+// Installed npm packages: jquery underscore request express
+// jade shelljs passport http sys lodash async mocha chai sinon
+// sinon-chai moment connect validator restify ejs ws co when
+// helmet wrench brain mustache should backbone forever debug jsdom
+
+const test = "    _  _     _  _  _  _  _ \n" + 
+              "  | _| _||_||_ |_   ||_||_|\n" + 
+              "  ||_  _|  | _||_|  ||_| _|";
+
+const test1 = "    _  _     _  _  _  _  _ \n  | _| _||_||_ |_   ||_||_|\n  ||_  _|  | _||_|  ||_| _|";
+
+const test2 = "    _  _  _  _  _  _  _  _ \n" + 
+               "|_||_   ||_ | ||_|| || || |\n" + 
+               "  | _|  | _||_||_||_||_||_|\n";
+
+"123456789"
+"457508000"
+const digits = {
+" _ | ||_|" : 0,
+"     |  |" : 1,
+" _  _||_ " : 2,
+" _  _| _|" : 3,
+"   |_|  |" : 4,
+" _ |_  _|" : 5,
+" _ |_ |_|" : 6,
+" _   |  |" : 7,
+" _ |_||_|" : 8,
+" _ |_| _|" : 9
+};
+
+function convert (str) {
+  str  = str.split('\n');
+  let res = "";
+  for ( let i = 0; i < 9; i++) {
+    let digChar = "";
+    for ( let j = 0; j < 3; j++) {
+      digChar += str[j][i*3] + str[j][i*3 + 1] + str[j][i*3 +2]
+      
+    }
+    res += digits[digChar]
+  }
+  return res;
+}
+
+function convertTest (test, exp) {
+  const act = convert(test);
+  if (  act === exp) {
+    console.log(`Pass: Input ${test} Output: ${exp}`);
+  } else {
+    console.log(`Pass: Input ${test} Expected: ${exp} Actual: ${act}`);
+  }
+}
+
+convertTest(test, "123456789");
+convertTest(test2, "457508000");
