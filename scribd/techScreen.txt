@@ -1,0 +1,11 @@
+write a function that takes as input two strings - poster, magazine.
+ 1. Determine if the poster can be built with all the chars in magazine.
+ 2. Write meaningful tests for the above ( console.logs were fine but I added a test
+ function because I had time)
+ 3. What if the poster string had spaces which we needed to ignore ? What if it had newline or tab characters?
+    - modified the function to update it accordingly
+    - added testcases to test the changes
+ 4. What is the time complexity of the solution   
+ 5. What if there was a pool of several magazines and several posters needed to be built from those and students could use 
+    more than one magazine
+    - Asked me to describe the approach not write the code
