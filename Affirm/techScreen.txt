@@ -1,0 +1,19 @@
+// Part 1
+// --------
+// Design a card game
+// there are two players
+// they draw a random card from a deck of cards having values [1...52]
+// Whoever gets the bigger card, gets 2 points
+// If the score ties the player with card 52 wins
+// run the game and show the winner
+
+First I tried generating random values 
+
+// Part 2
+//--------
+// Extend the above game to take in a array of N player names
+// The deck of card can be [1...M] now instead of [1...52]
+// The points for each round will N instead on 2
+// The M may not be a fully divisble by N
+// In case there are leftover cards they are distributed between players randomly
+
