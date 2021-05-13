@@ -1,0 +1,104 @@
+// # Background
+
+// Gusto’s payroll system allows employers to enter some basic information about employees being paid (like how much they should get paid) and then submit the payroll for processing. The payroll system does a lot of the work at this point and calculates the taxes to withhold for an employee, the taxes due by the employee, etc.
+
+// IRS withholding (federal income tax) is one of these taxes. The IRS uses a concept of federal income tax brackets to determine the amount of money to withhold from employees. A good description of tax brackets is described here: https://www.nerdwallet.com/blog/taxes/federal-income-tax-brackets/.
+
+// # Problem Statement
+
+// We’ll be working to create a software library that will know how to calculate federal income taxes. We’ll spend some time to understand federal income taxes using https://www.nerdwallet.com/blog/taxes/federal-income-tax-brackets/.
+  
+  
+ const maxInBracket = {
+    'SingleFiler' : {
+      '2021': {
+        '9875' : 987.5,
+        '40125' : 4617.50,
+        '85525' : 14605.50,
+        '163300' : 33271.50,
+        '207350': 47367.50,
+        '518400' : 156235
+      },
+      '2022': {
+        '9875' : 987.5,
+        '40125' : 4617.50,
+        '85525' : 14605.50,
+        '163300' : 33271.50,
+        '207350': 47367.50,
+        '518400' : 156235
+      }
+    },
+    'MarriedFilingJointly' : {
+         '2021' : {
+             '9875' : 987.5,
+            '40125' : 4617.50,
+            '85525' : 14605.50,
+            '163300' : 33271.50,
+            '207350': 47367.50,
+            '518400' : 156235
+         },
+         '2022' : {
+            '9875' : 987.5,
+            '40125' : 4617.50,
+            '85525' : 14605.50,
+            '163300' : 33271.50,
+            '207350': 47367.50,
+            '518400' : 156235
+         }
+     }
+ } 
+ 
+ const Bands = { 
+     'SingleFiler' : {
+       '2021' : [9875, 40125, 85525, 163300, 207350, 518400],
+       '2022' : [9875, 40125, 85525, 163300, 207350, 518400]
+     },
+     'MarriedFilingJointly' : {
+        '2021' : [9875, 40125, 85525, 163300, 207350, 518400],
+       '2022' : [9875, 40125, 85525, 163300, 207350, 518400] 
+     }
+ };
+ const TaxPc = {
+     'SingleFiler' : {
+        '2021': [10, 12, 22, 24, 32, 35, 37],
+        '2022' : [10, 12, 22, 24, 32, 35, 37]
+     },
+     'MarriedFilingJointly' : {
+        '2021': [10, 12, 22, 24, 32, 35, 37],
+        '2022' : [10, 12, 22, 24, 32, 35, 37]
+     }
+ } ;
+ 
+ function federalTax(income, type, year) {
+     let tax = 0;
+     
+     let i = 0
+     for ( ; i < Bands[type][year].length; i++) {
+         if ( income < Bands[type][year][i] )
+           break;
+     }
+     if ( i == 0) {
+         return (income * TaxPc[type][year][0]) / 100
+     }
+     let str = Bands[type][year][i - 1] + ""
+     tax += maxInBracket[type][year][str];
+     
+     let remainder = income - Bands[type][year][i - 1];
+     tax += ((remainder * TaxPc[type][year][i]) / 100 )
+     return tax;
+ }
+    
+function test ( income, type, year, res) {
+    let act = federalTax(income, type, year)
+    if ( act === res)
+      console.log ("Pass");
+    else {
+        console.log(`Fail: Expected : ${res}: Actual: ${act} `);
+    }  
+   
+}
+
+test(32000, 'SingleFiler', '2021', 3642.5);
+test(600000, 'SingleFiler', '2021', 186427);
+
+
