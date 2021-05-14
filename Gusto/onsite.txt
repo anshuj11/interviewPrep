@@ -102,3 +102,73 @@ test(32000, 'SingleFiler', '2021', 3642.5);
 test(600000, 'SingleFiler', '2021', 186427);
 
 
+
+console.log('Hello world');
+
+//Round 3
+
+System Design
+ Separate file in same folder
+
+
+//Round 5
+
+// Given an input string and a list of substrings to bold, return the same input string with HTML bold tags <b> and </b> around the substrings which are found in the input string.
+// >>> embolden_substrings('abcxyz', [])
+// 'abcxyz'
+
+// >>> embolden_substrings('abcxyz', ['abc', 'pq'])
+// '<b>abc</b>xyz'
+
+// >>> embolden_substrings('abcxyz123', ['abc', '123'])
+// '<b>abc</b>xyz<b>123</b>'
+
+// str = 'abcxyzabc123', ss = ['abc', 'cxy']
+// '<b>abcxy</b>z123
+// ind = str.indexOf(ss[0])
+
+// <b>
+function match(s, substr, j) {
+    return (substr === s.slice(j, j + substr.length).join(''))
+}
+function embolden_substrings(str, ss) {
+    const s = str.split("")
+    const isBold = new Array(str.length).fill(0);
+    for ( let i = 0; i < ss.length; i++) {
+        const substr = ss[i]; 
+        for ( let j = 0; j < s.length; j++) {
+            if ( substr[0] == s[j]) { //abc abc matched
+                if ( match(s, substr, j)) {
+                    for ( let k = j; k < j + substr.length; k++)
+                        isBold[k] = 1;
+                }
+            }
+        }   
+    }
+    let res = ""
+    if( isBold[0] === 1) {
+        res += "<b>"
+        res += s[0]
+    } // [0,0,0, 1,1]
+    for ( let i = 1; i < isBold.length; i++) {
+        if ( isBold[i] !== isBold[i - 1]) {
+            if ( isBold[i] === 0) {
+                res += '</b>'
+                res += s[i]
+            } else {
+                res += '<b>'
+                res += s[i]
+            }
+        } else {
+            res += s[i]
+        }
+    }
+    
+    if ( isBold[isBold.length - 1]) {
+        res += '</b>'
+    
+    }
+    return res;
+}
+
+console.log(embolden_substrings('abcxyz123abc', ['abc', 'xy']))
