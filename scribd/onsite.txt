@@ -1,0 +1,22 @@
+Round1 : coderpad
+-------
+
+Create a graph ( undirected/directed your choice)
+dynamically add edges to the graph
+find and return the path between two nodes 
+
+
+Round2 : coderpad
+--------
+
+Create a timeSeries based data structure
+do the following operations:
+set(key, value, timestamp)
+get(key, timestamp);
+return the value whose timestamp is maximum less than or equal to timestamp in the get call.
+
+kv = new TimeMap;
+kv.set( 'foo', 'bar', 1);
+kv.set('foo', 'bar2', 4);
+kv.get('foo', 3) //returns 'bar'
+
