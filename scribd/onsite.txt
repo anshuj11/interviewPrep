@@ -20,3 +20,152 @@ kv.set( 'foo', 'bar', 1);
 kv.set('foo', 'bar2', 4);
 kv.get('foo', 3) //returns 'bar'
 
+Round 3 : coderpad - system design
+--------
+
+Break up a monolith into microservices
+
+We have a monolithic application represented by the following DB schema:
+
+products
+========
+id: integer
+title: varchar
+description: text
+image_url: varchar
+price: decimal(8,2)
+
+carts
+=====
+id: integer
+user_id: integer
+
+line_items
+==========
+id: integer
+product_id: integer
+cart_id: integer
+order_id: integer
+quantity: integer
+price: decimal
+
+orders
+======
+id: integer
+user_id: integer
+name: varchar
+address: text
+email: varchar
+pay_type: integer
+
+users
+=====
+id: integer
+name: varchar
+password_digest: varchar
+
+User journey:
+
+1. User logs in
+2. User adds products to a shopping cart
+3. User removes products from the shopping cart
+4. User checks out and we create the order
+
+Your mission is to split the existing monolithic application and to design a set of microservices.
+
+Additional requirements:
+1. The Analytics team wants to get anonymized data about orders and products in order to bring data to the masses and make data-driven decision making a reality.
+2. The Support team wants to get the information about user purchases in order to improve user experience on the platform.
+
+
+## Shopping cart
+
+Carts
+
+1. Session token
+2. product_id
+3. Quanitity
+
+
+### 
+
+1. Authentication (issue session token)
+
+2. shopping Cart
+
+
+3. Check out ( make payments, store order data after filtering PII )
+
+4. Notification ( order receipt, cart notification)
+
+5. Analytics ( reads and processes data from filtered orders table, provides actionable insights )
+
+6. Support team ( reads data from orders and line-items table
+
+
+
+
+
+Round 4 : coderpad 
+----------
+
+* 
+Your previous Plain Text content is preserved below:
+
+Given a string s, find the length of the longest substring without repeating characters.
+
+ */
+
+// abcdeafgasdfghjt
+
+
+function findLongestUniq(S) {
+  let maxLen = 0;
+  let currLen = 0;
+  const seen = new Set;
+  let substr = "";
+  let begPtr = 0;
+  
+  for ( let i = 0; i < S.length; i++) { // O(n)
+    const ch = S[i];
+    if ( !seen.has(ch)){
+      seen.add(ch);
+      substr += ch;
+      currLen += 1;
+    } else {
+      maxLen = Math.max( maxLen, currLen);
+      
+      const ind = substr.indexOf(ch);  // O(m)
+      begPtr += begPtr + ind + 1;
+      for ( let j = 0; j < ind; j++) {
+        seen.delete(substr[j]);
+      }
+      substr = substr.slice(ind+1);
+      substr += ch;
+      currLen = substr.length;
+      
+    }
+  }
+  
+  maxLen = Math.max( maxLen, currLen);
+  console.log({substr});
+  return maxLen;
+  
+}
+
+
+function test(S, exp) {
+  const act = findLongestUniq(S);
+  if ( act !== exp)
+    console.log(`Fail: Expected: ${exp}, Actual: ${act}`);
+  else
+    console.log("Pass");
+}
+  
+  
+  test("abcdeafgasdfghjt", 8);
+  test("", 0);
+  test("aaaaaa", 1);
+  test("abcababab", 3);
+ test('pwwkew', 3);
+
