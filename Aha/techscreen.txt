@@ -1,0 +1,48 @@
+Round 1. Alex Bartlow
+---------
+
+1. what challenges did you face in your last job?
+
+-------------------------------------------------------
+
+
+
+
+Coding problem - DFS
+
+# First, the developer declares types and conversions
+# using a friendly DSL:
+type :string
+
+type :date
+
+type :number do
+  convert_to :string
+end
+
+type :boolean do
+  convert_to :number
+end
+
+# There is a TypeRegistry class which stores the
+# declared types and their conversions. The DSL
+# code for the above essentially does the following:
+registry = TypeRegistry.new
+registry.add_conversion(:number, :string)
+registry.add_conversion(:boolean, :number)
+
+# The TypeRegistry class looks like this:
+class TypeRegistry
+  def initialize
+    @registry = [ {} ]
+  end
+ 
+  def add_conversion(from_type, to_type)
+    # Store somehow that e.g. :boolean converts to :number
+  end
+ 
+  def converts_from?(from_type, to_type)
+    # Returns true/false based on whether there exists a
+    # conversion path between from_type and to_type.
+  end
+
