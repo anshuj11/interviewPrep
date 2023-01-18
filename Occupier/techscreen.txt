@@ -1,0 +1,15 @@
+Parameters
+amount: Number - Amount of money to withdraw. Assume that the amount is always divisible into 100, 50 and 20 bills.
+
+Return Value
+Array<Number> - An array of 3 integers representing the number of 100, 50 and 20 dollar bills needed to complete the withdraw (in that order).
+
+Constraints
+40 ≤ amount ≤ 1000
+
+Examples
+amount	Return Value
+250	[2,1,0]
+260	[2,0,3]
+370	[3,1,1]
+
