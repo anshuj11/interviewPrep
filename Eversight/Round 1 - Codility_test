@@ -1,0 +1,13 @@
+1 hour online test
+---------------------
+
+1. Find and return duplicate char in the string
+   A string has all chars occuring once except for one char which occurs twice. Find and return it.
+      
+2. Find all numbers which when sorted and placed in an array have same difference between consecutive elements ( aritmatic progression)
+Return the number of elements in the longest arithmatic progression made possible from the elements of the array.
+
+3. Given employees table and positions table find the avg(salary) of all the employees that hold position_name = "Software Engineer" 
+and are <= 30 years old.
+   
+   
