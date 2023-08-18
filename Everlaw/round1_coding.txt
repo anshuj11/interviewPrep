@@ -1,0 +1,3 @@
+Part1
+Given a binary search tree. How will you print the elements from smallest to largest.
+Part2.
