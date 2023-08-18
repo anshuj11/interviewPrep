@@ -1,0 +1,49 @@
+TweetWordStatsCounter {
+         wordMap = {}
+
+void onTweet(long tweetId) { 
+
+// Callback fired when tweets are created
+     tweet = get - tweet(tweetID)
+tweet_array = tweet.split(‘ ‘)
+for(let i = 0; i < tweet_array.length; i++) {
+   
+   wordMap[tweet_array[i] += 1
+}
+
+}
+
+
+int getWordCount(String word) { 
+
+// Return the number of appearances of that word since we 
+
+// started
+
+…
+wordMap[word]
+
+}
+
+}
+
+/**
+ * Sample corpus:
+ * Tweet 1 - “setting up my twitter”
+ * Tweet 2 - “I just set up my Twitter. hello world!”
+ * Tweet 3 - “Hello! My twitter rocks”
+ */
+getWordCount(“twitter”) -> 3
+getWordCount(“rocks”) -> 1
+
+           Discussion on the above api:
+
+           How will you code both methods.
+           How will you handle different delimiters
+           How will you handle punctuation
+           How will you handle capitalization/lowercase.
+           How will you handle languages which dont have whitespaces as delimiters ( e.g. Chinese, Korean, JApanese)
+           How many bytes will you need to store this data
+           What will be the considerations if there are more than one api servers running
+           How will you handle db replication
+
